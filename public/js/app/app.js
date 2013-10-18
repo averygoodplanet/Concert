@@ -4,9 +4,33 @@ $(document).ready(initialize);
 
 function initialize(fn, flag){
   if(!canRun(flag)) {return;}
-
   $(document).foundation();
+
+  $('#create').click(clickCreate);
 }
+
+// -------------------------------------------------------------------- //
+// -------------------------------------------------------------------- //
+// -------------------------------------------------------------------- //
+function clickCreate() {
+  var section = $('#options').val();
+  if(section == 'ga'){
+    createGA();
+  } else if(section == 'vip'){
+    createVIP();
+  } else{
+    alert('section value not equal to "ga" or "vip"');
+  }
+}
+
+function createGA() {
+  console.log('in createGA');
+}
+
+function createVIP() {
+  console.log('in createVIP');
+}
+
 
 // -------------------------------------------------------------------- //
 // -------------------------------------------------------------------- //
