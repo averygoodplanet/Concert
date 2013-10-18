@@ -57,13 +57,14 @@ function createGA() {
   if(numberInUnfullRow > 0){
     var unfullrow = '<div class = "seatRow unfull"></div>';
     var $unfullrow = $(unfullrow);
-    for(var j = 0; j < numberInUnfullRow; j++){
+    for(var k = 0; k < numberInUnfullRow; k++){
       var newSeat = '<div class = "seat"></div>';
       var $newSeat = $(newSeat);
       $unfullrow.append($newSeat);
     }
     $('#ga').append($unfullrow);
   }
+  debugger;
 }
 
 
