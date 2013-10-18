@@ -7,6 +7,7 @@ function initialize(fn, flag){
   $(document).foundation();
 
   $('#create').click(clickCreate);
+  $("#bottom").on("dblclick", ".seatinside", addName);
 }
 
 // -------------------------------------------------------------------- //
@@ -42,7 +43,6 @@ function createGA() {
 
   //for number of full rows, add full rows to #ga
   for(var i = 0; i < numberFullRows; i++){
-    debugger;
     var fullrow = '<div class = "seatRow"></div>';
     var $fullRow = $(fullrow);
     //add seats, where seats have class .seat to fullRow;
@@ -52,7 +52,6 @@ function createGA() {
       $fullRow.append($seat);
     }
     $('#ga').append($fullRow);
-    alert('row');
   }
 
   if(numberInUnfullRow > 0){
@@ -82,6 +81,21 @@ function createVIP() {
     $("#vip").append($seat);
   }
 }
+
+// ------------------------------------------------------[addName]----------------->
+
+function addName(){
+  var $this = $(this);
+  if($this.text() === ""){
+    var name = $("#name").val();
+    $this.text(name);
+    $("#name").val("");
+  }else{
+    alert("Already assigned.");
+  }
+}
+
+// ------------------------------------------------------[End addName]----------------->
 
 function seatMath(numberOfSeats, seatsPerRow) {
   var evenNumber = (numberOfSeats % seatsPerRow === 0);
