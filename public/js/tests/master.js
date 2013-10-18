@@ -27,7 +27,7 @@ test('create VIP section #vip', function(){
   //--#vip contains number of divs == 20
   deepEqual($('#vip .seat').length, 20, 'checking that 20 seats created under #vip');
   //--#vip divs have border
-  ok(_.every($('#vip div').css('border'), function(item) {return item === true;}), 'check that all vip divs have a border');
+  deepEqual($('#vip .seat').css('border'), '1px solid rgb(0, 0, 255)', 'check that all vip .seats have border divs');
   ok(_.every($('#vip > .seatRow'), function(row) {return $(row).children('div').length <= 10;}), 'check that each vip row only 10 seats wide');
 });
 
@@ -49,6 +49,6 @@ test('create General Admission section #ga', function(){
   //--#ga contains number of divs == 40
   deepEqual($('#ga .seat').length, 20, 'checking that 20 seats created under #ga');
   //--#ga divs have border
-  ok(_.every($('#ga div').css('border'), function(item) {return item === true;}), 'check that all ga divs have a border');
+  deepEqual($('#ga .seat').css('border'), '1px solid rgb(0, 0, 255)', 'check that all ga .seats have border divs');
   ok(_.every($('#ga > .seatRow'), function(row) {return $(row).children('div').length <= 15;}), 'check that each ga row only 15 seats wide');
 });
