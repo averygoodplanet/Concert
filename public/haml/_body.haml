@@ -1,1 +1,18 @@
 /#map-canvas
+#top
+  #overall
+    .row#optionsbox
+      .small-4.columns
+        %select#options{type: "text"}
+          %option Select Section
+          %option{value: "ga"} General Admission
+          %option{value: "vip"} VIP
+      .small-4.columns
+        %input#numSeats{type: "text", placeholder: "Number of Seats"}
+      .small-4.columns
+        %input#create.button.radius.small.success.expand{type: "button", value: "Create"}
+#bottom
+  #overall2
+    #stage
+    #vip
+    #ga

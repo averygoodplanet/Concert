@@ -4,7 +4,7 @@
 <head>
   <meta charset='utf-8'>
   <meta content='width=device-width' name='viewport'>
-  <title>Master Template</title>
+  <title>Concert</title>
   <link href='/css/normalize.css' rel='stylesheet'>
   <link href='/css/foundation.css' rel='stylesheet'>
   <link href='/css/app.css' rel='stylesheet'>
@@ -13,6 +13,32 @@
 </head>
 <body>
   <!-- #map-canvas -->
+  <div id='top'>
+    <div id='overall'>
+      <div class='row' id='optionsbox'>
+        <div class='small-4 columns'>
+          <select id='options' type='text'>
+            <option>Select Section</option>
+            <option value='ga'>General Admission</option>
+            <option value='vip'>VIP</option>
+          </select>
+        </div>
+        <div class='small-4 columns'>
+          <input id='numSeats' placeholder='Number of Seats' type='text'>
+        </div>
+        <div class='small-4 columns'>
+          <input class='button radius small success expand' id='create' type='button' value='Create'>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id='bottom'>
+    <div id='overall2'>
+      <div id='stage'></div>
+      <div id='vip'></div>
+      <div id='ga'></div>
+    </div>
+  </div>
   <script src='/js/vendor/jquery-1.10.2.js'></script>
   <script src='/js/vendor/foundation.min.js'></script>
   <script src='/js/vendor/underscore.js'></script>
