@@ -74,6 +74,10 @@ function createVIP() {
   for(var i = 0; i < seatNum; i++){
     var $seat = $("<div>");
     $seat.addClass("seat");
+    $seat.text(i + 1);
+    var $text = $("<div>");
+    $text.addClass("seatinside");
+    $seat.append($text);
     $("#vip").append($seat);
   }
 }

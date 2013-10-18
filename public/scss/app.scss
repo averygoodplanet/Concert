@@ -90,6 +90,18 @@ select, input {
   height: 49px;
   float: left;
   border: 1px solid blue;
+  color: white;
+  font-size:10px;
+  overflow: hidden;
+}
+
+.seatinside {
+  width: 49px;
+  height: 30px;
+  color: white;
+  float: left;
+  background-color: green;
+  margin-top: 2px;
 }
 
 #ga {
@@ -110,4 +122,12 @@ select, input {
 #namecontainer {
   margin: auto;
   margin-top: -13px;
+}
+
+#name {
+  height: 20px;
+  width: 150px;
+  margin: auto;
+  margin-left: 750px;
+  margin-top: 13px;
 }
