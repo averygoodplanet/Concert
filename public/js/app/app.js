@@ -38,19 +38,21 @@ function createGA() {
   // seatMath returns {fullrows: 2, unfullrow: 1}
   var numberFullRows = seatInfo.fullrows;
   var numberInUnfullRow = seatInfo.unfullrow;
-  var fullrow = '<div class = "seatRow"></div>';
-  var $fullRow = $(fullrow);
-  //add seats, where seats have class .seat to fullRow;
-  for(var i = 0; i < seatsPerRow; i++){
-    var seat = '<div class = "seat"></div>';
-    var $seat = $(seat);
-    $fullRow.append($seat);
-  }
+
 
   //for number of full rows, add full rows to #ga
   for(var i = 0; i < numberFullRows; i++){
-    var $row = $fullRow;
-    $('#ga').append($row);
+    debugger;
+    var fullrow = '<div class = "seatRow"></div>';
+    var $fullRow = $(fullrow);
+    //add seats, where seats have class .seat to fullRow;
+    for(var j = 0; j < seatsPerRow; j++){
+      var seat = '<div class = "seat"></div>';
+      var $seat = $(seat);
+      $fullRow.append($seat);
+    }
+    $('#ga').append($fullRow);
+    alert('row');
   }
 
   if(numberInUnfullRow > 0){
