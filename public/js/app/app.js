@@ -13,22 +13,34 @@ function initialize(fn, flag){
 // -------------------------------------------------------------------- //
 // -------------------------------------------------------------------- //
 function clickCreate() {
-  var section = $('#options').val();
-  if(section == 'ga'){
+  var section = $("#options").val();
+  if(section === "ga"){
     createGA();
-  } else if(section == 'vip'){
+  } else if(section === "vip"){
     createVIP();
   } else{
-    alert('section value not equal to "ga" or "vip"');
+    alert("Please select a section.");
+  }
+  if($("#vip div").length > 0 && $("#ga div").length > 0){
+    $("#top").remove();
+    var $padding = $("<div>");
+    $padding.addClass("padding");
+    $("body").prepend($padding);
   }
 }
 
 function createGA() {
-  console.log('in createGA');
 }
 
 function createVIP() {
-  console.log('in createVIP');
+  // debugger;
+  console.log("in createVIP");
+  var seatNum = parseFloat($("#numSeats").val());
+  for(var i = 0; i < seatNum; i++){
+    var $seat = $("<div>");
+    $seat.addClass("seat");
+    $("#vip").append($seat);
+  }
 }
 
 

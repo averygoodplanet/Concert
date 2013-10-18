@@ -51,8 +51,8 @@ select, input {
 }
 
 #stage {
-  height: 60px;
-  width: 400px;
+  height: 100px;
+  width: 500px;
   background-color: gray;
   border: 3px solid black;
   margin: 20px auto;
@@ -67,8 +67,47 @@ select, input {
 }
 
 #stage h1 {
+  color: white;
   width: 150px;
   margin: auto;
+  margin-left: 175px;
+  position: absolute;
+  margin-top: 18px;
+}
+
+#vip {
+  width: 492px;
+  height: 196px;
+  // border: 1px solid white;
+  margin: auto;
   position: relative;
-  top: -5px;
+  top: 45px;
+  overflow: hidden;
+}
+
+.seat {
+  width: 49px;
+  height: 49px;
+  float: left;
+  border: 1px solid blue;
+}
+
+#ga {
+  width: 737px;
+  height: 196px;
+  // border: 1px solid white;
+  margin: auto;
+  position: relative;
+  top: 95px;
+  overflow: hidden;
+}
+
+.padding {
+  height: 50px;
+  width: 10px;
+}
+
+#namecontainer {
+  margin: auto;
+  margin-top: -13px;
 }
