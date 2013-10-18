@@ -135,3 +135,23 @@ select, input {
   margin-left: 750px;
   margin-top: 13px;
 }
+
+#reportingLeftContainer {
+  height: 245px;
+  width: 200px;
+  // border: 1px solid white;
+  margin-top: -555px;
+  margin-left: 13px;
+  float: left;
+  background-color: rgba(1,1,1,.5);
+}
+
+#reportingRightContainer {
+  height: 245px;
+  width: 200px;
+  // border: 1px solid white;
+  float: right;
+  margin-top: -555px;
+  margin-right: 13px;
+  background-color: rgba(1,1,1,.5);
+}
