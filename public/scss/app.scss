@@ -40,8 +40,22 @@ select, input {
 
 #overall2 {
   margin: auto;
-  margin-top: 5px;
+  margin-top: -15px;
   width: 960px;
-  height: 700px;
-  border: 2px dotted white;
+  height: 675px;
+  // border: 2px dotted white;
+  background-color: rgba(0,0,0,.5);
+}
+
+#stage {
+  height: 80px;
+  width: 600px;
+  background-color: gray;
+  border: 3px solid black;
+  margin: 20px auto;
+}
+
+#stage h1 {
+  width: 150px;
+  margin: 5px auto;
 }
