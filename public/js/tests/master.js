@@ -52,3 +52,37 @@ test('create General Admission section #ga', function(){
   deepEqual($('#ga .seat').css('border'), '1px solid rgb(0, 0, 255)', 'check that all ga .seats have border divs');
   ok(_.every($('#ga > .seatRow'), function(row) {return $(row).children('div').length <= 15;}), 'check that each ga row only 15 seats wide');
 });
+
+test('Reserve an empty seat (in ga for John; in vip for Fred)', function() {
+  expect(1);
+
+  //create #vip and #ga sections
+  //--create #vip section with 22 seats
+  $('#options').val('ga');
+  $('#numSeats').val('22');
+  $('#create').trigger('click');
+
+  //--create #ga section with 42 seats
+  $('#options').val('vip');
+  $('#numSeats').val('42');
+  $('#create').trigger('click');
+
+  //add reservation on 2nd row, 2nd blank seat in #ga section for 'John'
+  $('#name').val('John');
+  $('#ga > .seatRow:nth-child(2) .seat:nth-child(2)').trigger('dblclick');
+
+  //add reservation on 5th seat in #vip section for 'Fred' (requirements do not include row selection)
+  $('#name').val('Fred');
+  $('#vip > .seat:nth-child(5)').trigger('dblclick');
+
+  //write assertions
+  deepEqual($('#name').val(), '', 'name field should be clear');
+  //--in GA section, 2nd row 2nd seat, text should be 'John'
+
+  //--in VIP section, 5th seat, text should be 'Fred'
+});
+
+
+  //try to add reservation on reserved seat in #ga section (and get rejected and receive alert)
+
+  //try to add reservation on reserved seat in #vip section (and get rejected and receive alert)
