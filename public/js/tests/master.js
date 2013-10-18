@@ -10,11 +10,11 @@ function teardownTest(){
 
 }
 
-test("Display VIP section #vip", function(){
+test("create VIP section #vip", function(){
   expect(3);
 
   //set options to VIP Section
-  $('#options').val('vip').trigger('change');
+  $('#options').val('vip');
   //set number of seats to 20
   $('#numSeats').val('20');
   //click #create  ('Create Section')
@@ -25,7 +25,8 @@ test("Display VIP section #vip", function(){
   //--#vip exists
   ok($('#vip').length, 'checking that #vip exists');
   //--#vip contains number of divs == 20
-  deepEqual($('#vip div').length, 20, 'checking that 20 child divs created under #vip');
+  deepEqual($('#vip .seat').length, 20, 'checking that 20 seats created under #vip');
   //--#vip divs have border
-  ok(_.every($('#vip div').css('border'), function(item) {return item == true;}), 'check that all vip divs have a border');
+  ok(_.every($('#vip div').css('border'), function(item) {return item === true;}), 'check that all vip divs have a border');
+  ok(_.every($('#vip > .seatRow'), function(row) {return $(row).children('div').length <= 10;}), 'check that each vip row only 10 seats wide');
 });
