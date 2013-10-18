@@ -24,8 +24,15 @@ function clickCreate() {
 }
 
 function createGA() {
-  var seatStuff = seatMath(42, 20);
+  //Because this function was called, I already know that general admission section was selected.
+  var numberOfSeats = parseInt($('#numSeats').val());
+  var seatsPerRow = 20;
+  var seatInfo = seatMath(numberOfSeats, seatsPerRow);
+  // pass seatMath(numberOfSeats, seatsPerRow)
+  // seatMath returns {fullrows: 2, unfullrow: 1}
+  debugger;
 }
+
 
 function createVIP() {
   console.log('in createVIP');
