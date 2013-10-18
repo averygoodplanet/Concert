@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 $(document).ready(initialize);
 
@@ -24,13 +24,31 @@ function clickCreate() {
 }
 
 function createGA() {
-  console.log('in createGA');
+  var seatStuff = seatMath(42, 20);
 }
 
 function createVIP() {
   console.log('in createVIP');
 }
 
+function seatMath(numberOfSeats, seatsPerRow) {
+  var evenNumber = (numberOfSeats % seatsPerRow === 0);
+  var numberFullRows = 0;
+  var numberSeatsUnfullRow = 0;
+
+  if(evenNumber){
+    numberFullRows = numberOfSeats / seatsPerRow;
+    numberSeatsUnfullRow = 0;
+  } else if(evenNumber === false){
+    numberFullRows = parseInt(Math.floor(numberOfSeats / seatsPerRow), 10);
+    numberSeatsUnfullRow = numberOfSeats % seatsPerRow;
+  } else {
+    console.log('evenNumber went to else statement');
+  }
+
+  var seatInfo = {fullrows: numberFullRows, unfullrow: numberSeatsUnfullRow};
+  return seatInfo;
+}
 
 // -------------------------------------------------------------------- //
 // -------------------------------------------------------------------- //
@@ -39,7 +57,7 @@ function createVIP() {
 function getValue(selector, fn){
   var value = $(selector).val();
   value = value.trim();
-  $(selector).val("");
+  $(selector).val('');
 
   if(fn){
     value = fn(value);
@@ -53,7 +71,7 @@ function getValue(selector, fn){
 // -------------------------------------------------------------------- //
 
 function canRun(flag){
-  var isQunit = $("#qunit").length > 0;
+  var isQunit = $('#qunit').length > 0;
   var isFlag = flag !== undefined;
   var value = isQunit && isFlag || !isQunit;
   return value;
