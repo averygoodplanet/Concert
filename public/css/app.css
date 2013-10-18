@@ -82,6 +82,7 @@ select, input {
   background-color: rgba(1, 1, 1, 0.5); }
 
 .seatinside {
+  font-family: serif;
   width: 45px;
   height: 30px;
   color: white;
