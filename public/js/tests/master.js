@@ -94,7 +94,7 @@ test('Reserve an empty seat in each section, and reject reservation on occupied 
 });
 
 test('Display reserved seats in #reportingRight', function () {
-  expect(1);
+  expect(7);
 
   //create both sections
   //--create #vip section with 22 seats
