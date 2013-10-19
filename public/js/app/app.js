@@ -97,14 +97,45 @@ function createVIP() {
 // ------------------------------------------------------[addName]----------------->
 
 function addName(){
+  //the oject that was clicked on
   var $this = $(this);
-  if($this.text() === ""){
-    var name = $("#name").val();
+  var isGASection = $this.parent().parent().hasClass('seatRow');
+
+  //if seat is not currently reserved
+  if($this.text() === ''){
+    var thisSeatNumber = parseInt($this.parent().text(), 10);
+    //get the text for text input box
+    var name = $('#name').val();
+    //put this text into the jQuery object
     $this.text(name);
-    $("#name").val("");
+    //clear out the input box
+    $('#name').val('');
+    updateSeatList(thisSeatNumber, name, isGASection);
   }else{
-    alert("Already assigned.");
+    alert('Already assigned.');
   }
+}
+
+function updateSeatList(thisSeatNumber, name, isGASection) {
+  var sectionLetter = '';
+  var section = '';
+
+  // isGASection --> sectionLetter and section
+  if(isGASection){
+    sectionLetter = 'G';
+    section = 'GA:';
+  } else {
+    sectionLetter = 'V';
+    section = 'VIP:';
+  }
+
+  var seat = sectionLetter + thisSeatNumber;
+
+  var row = '<tr><td></td><td></td><td></td></tr>'
+  var $row = $(row);
+
+
+  debugger;
 }
 
 // ------------------------------------------------------[End addName]----------------->
