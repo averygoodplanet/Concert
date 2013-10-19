@@ -134,7 +134,7 @@ function updateSeatList(thisSeatNumber, name, isGASection) {
   var row = '<tr><td></td><td></td><td></td></tr>'
   var $row = $(row);
 
-
+  //**Try .eq(3) for example.
   debugger;
 }
 
