@@ -129,3 +129,21 @@ select, input {
   margin-top: -555px;
   margin-right: 13px;
   background-color: rgba(1, 1, 1, 0.5); }
+  #reportingRightContainer h5 {
+    color: white;
+    text-align: center;
+    font-size: 21px; }
+  #reportingRightContainer table {
+    margin-left: 25px;
+    border-radius: 3px;
+    border: none; }
+    #reportingRightContainer table td {
+      padding: 0; }
+    #reportingRightContainer table td:nth-child(1) {
+      padding-left: 8px; }
+    #reportingRightContainer table td:nth-child(2), #reportingRightContainer table td:nth-child(3) {
+      text-align: center; }
+    #reportingRightContainer table tr:last-child > td {
+      padding-bottom: 10px; }
+  #reportingRightContainer #gaTableRow > td {
+    padding-top: 10px; }
