@@ -145,5 +145,5 @@ select, input {
       text-align: center; }
     #reportingRightContainer table tr:last-child > td {
       padding-bottom: 10px; }
-  #reportingRightContainer #gaTableRow > td {
+  #reportingRightContainer #gaFirstRow, #reportingRightContainer #vipFirstRow > td {
     padding-top: 10px; }

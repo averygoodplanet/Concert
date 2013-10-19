@@ -93,7 +93,37 @@ test('Reserve an empty seat in each section, and reject reservation on occupied 
 
 });
 
+test('Display reserved seats in #reportingRight', function () {
+  expect(1);
 
-  //try to add reservation on reserved seat in #ga section (and get rejected and receive alert)
+  //create both sections
+  //--create #vip section with 22 seats
+  $('#options').val('ga');
+  $('#numSeats').val('22');
+  $('#create').trigger('click');
 
-  //try to add reservation on reserved seat in #vip section (and get rejected and receive alert)
+  //--create #ga section with 42 seats
+  $('#options').val('vip');
+  $('#numSeats').val('42');
+  $('#create').trigger('click');
+
+  //reserve two seats in general admission
+  $('#name').val('Alan');
+  $('#ga .seatRow:nth-child(1) .seat:nth-child(2) .seatinside').trigger('dblclick');
+  $('#name').val('Ben');
+  $('#ga .seatRow:nth-child(2) .seat:nth-child(3) .seatinside').trigger('dblclick');
+
+  //reserve two seats in vip
+  $('#name').val('Carl');
+  $('#vip .seat:nth-child(3) .seatinside').trigger('dblclick');
+  $('#name').val('Dan');
+  $('#vip .seat:nth-child(25) .seatinside').trigger('dblclick');
+
+  deepEqual($('#reportingRight table tr').length, 5, 'table should have 5 rows (4 + header)');
+  deepEqual($('#reportingRight table tr:nth-child(2) td:nth-child(1)').text(), 'GA:', 'first row cell "GA:"');
+  deepEqual($('#reportingRight table tr:nth-child(3) td:nth-child(2)').text(), 'G18', 'second row 2nd cell "G18"');
+  deepEqual($('#reportingRight table tr:nth-child(3) td:nth-child(3)').text(), 'Ben', 'second row 3rd cell "Ben"');
+  deepEqual($('#reportingRight table tr:nth-child(4) td:nth-child(1)').text(), 'VIP:', 'third row 1st cell "VIP:"');
+  deepEqual($('#reportingRight table tr:nth-child(5) td:nth-child(2)').text(), 'V25', 'fourth row 2nd cell "V25"');
+  deepEqual($('#reportingRight table tr:nth-child(5) td:nth-child(3)').text(), 'Dan', 'fourth row 3rd cell "Dan"');
+});
