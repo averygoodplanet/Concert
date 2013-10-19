@@ -53,8 +53,8 @@ test('create General Admission section #ga', function(){
   ok(_.every($('#ga > .seatRow'), function(row) {return $(row).children('div').length <= 15;}), 'check that each ga row only 15 seats wide');
 });
 
-test('Reserve an empty seat (in ga for John; in vip for Fred)', function() {
-  expect(1);
+test('Reserve an empty seat in each section, and reject reservation on occupied seat each section', function() {
+  expect(3);
 
   //create #vip and #ga sections
   //--create #vip section with 22 seats
@@ -69,17 +69,28 @@ test('Reserve an empty seat (in ga for John; in vip for Fred)', function() {
 
   //add reservation on 2nd row, 2nd blank seat in #ga section for 'John'
   $('#name').val('John');
-  $('#ga > .seatRow:nth-child(2) .seat:nth-child(2)').trigger('dblclick');
+  $('#ga > .seatRow:nth-child(2) .seat:nth-child(2) .seatinside').trigger('dblclick');
+  //try to add reservation on top of John's occupied seat (this should be rejected)
+  $('#name').val('Ron');
+  $('#ga > .seatRow:nth-child(2) .seat:nth-child(2) .seatinside').trigger('dblclick');
 
   //add reservation on 5th seat in #vip section for 'Fred' (requirements do not include row selection)
   $('#name').val('Fred');
-  $('#vip > .seat:nth-child(5)').trigger('dblclick');
+  $('#vip > .seat:nth-child(5) .seatinside').trigger('dblclick');
+  deepEqual($('#name').val(), '', 'name field should be clear');
+  //try to add reservation on top of Fred's occuppied seat (this should be rejected)
+  $('#name').val('Ned');
+  $('#vip > .seat:nth-child(5) .seatinside').trigger('dblclick');
 
   //write assertions
-  deepEqual($('#name').val(), '', 'name field should be clear');
-  //--in GA section, 2nd row 2nd seat, text should be 'John'
 
+  //--in GA section, 2nd row 2nd seat, text should be 'John'
+  deepEqual($('#ga > .seatRow:nth-child(2) .seat:nth-child(2) .seatinside').text(), 'John', 'ga 2nd row 2nd seat should be John');
+  //$('#ga .seatRow:nth-child(1) .seat:nth-child(5)')
   //--in VIP section, 5th seat, text should be 'Fred'
+  deepEqual($('#vip .seat:nth-child(5) .seatinside').text(), 'Fred', 'vip 5th seat should be Fred');
+
+
 });
 
 
