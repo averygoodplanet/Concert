@@ -119,21 +119,22 @@ function addName(){
 function updateSeatList(thisSeatNumber, name, isGASection) {
   var sectionLetter = '';
   var section = '';
+  var mySectionAlreadyHasFirstRow;
 
   // isGASection --> sectionLetter and section
   if(isGASection){
     sectionLetter = 'G';
     section = 'GA:';
+    mySectionAlreadyHasFirstRow = $('#reportingRight').has('#vipFirstRow').length > 0;
   } else {
     sectionLetter = 'V';
     section = 'VIP:';
+    mySectionAlreadyHasFirstRow = $('#reportingRight').has('#gaFirstRow').length > 0;
   }
 
   var seat = sectionLetter + thisSeatNumber;
-
-  var row = '<tr><td></td><td></td><td></td></tr>'
+  var row = '<tr><td></td><td></td><td></td></tr>';
   var $row = $(row);
-
   //**Try .eq(3) for example.
   debugger;
 }
