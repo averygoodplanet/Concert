@@ -119,23 +119,39 @@ function addName(){
 function updateSeatList(thisSeatNumber, name, isGASection) {
   var sectionLetter = '';
   var section = '';
-  var mySectionAlreadyHasFirstRow;
+  var sectionSelector = '';
+  var mySectionAlreadyHasFirstRow, sectionClass;
 
   // isGASection --> sectionLetter and section
   if(isGASection){
     sectionLetter = 'G';
     section = 'GA:';
-    mySectionAlreadyHasFirstRow = $('#reportingRight').has('#vipFirstRow').length > 0;
+    sectionSelector = '.gaFirstRow';
+    sectionClass = 'gaFirstRow';
+    mySectionAlreadyHasFirstRow = $('#reportingRight').has(sectionSelector).length > 0;
   } else {
     sectionLetter = 'V';
     section = 'VIP:';
-    mySectionAlreadyHasFirstRow = $('#reportingRight').has('#gaFirstRow').length > 0;
+    sectionSelector = '.vipFirstRow';
+    sectionClass = 'vipFirstRow'
+    mySectionAlreadyHasFirstRow = $('#reportingRight').has(sectionSelector).length > 0;
   }
 
   var seat = sectionLetter + thisSeatNumber;
   var row = '<tr><td></td><td></td><td></td></tr>';
   var $row = $(row);
-  //**Try .eq(3) for example.
+  $row.children().eq(1).text(seat);
+  $row.children().eq(2).text(name);
+
+  //if this is the first row for a section listing, add prefix, i.e. "VIP:", and append
+  //the row to the table. If is the second row of a section, needs to be inserted after that table.
+  if(mySectionAlreadyHasFirstRow){
+    $(sectionSelector).after($row);
+  } else {
+    $row.children().eq(0).text(section);
+    $row.addClass(sectionClass);
+    $('#reportingRight table').append($row);
+  }
   debugger;
 }
 
