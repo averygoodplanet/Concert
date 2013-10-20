@@ -81,16 +81,16 @@ function createGA() {
 
 function createVIP() {
   // debugger;
-  console.log("in createVIP");
-  var seatNum = parseFloat($("#numSeats").val());
+  console.log('in createVIP');
+  var seatNum = parseFloat($('#numSeats').val());
   for(var i = 0; i < seatNum; i++){
-    var $seat = $("<div>");
-    $seat.addClass("seat");
+    var $seat = $('<div>');
+    $seat.addClass('seat');
     $seat.text(i + 1);
-    var $text = $("<div>");
-    $text.addClass("seatinside");
+    var $text = $('<div>');
+    $text.addClass('seatinside');
     $seat.append($text);
-    $("#vip").append($seat);
+    $('#vip').append($seat);
   }
 }
 
@@ -133,7 +133,7 @@ function updateSeatList(thisSeatNumber, name, isGASection) {
     sectionLetter = 'V';
     section = 'VIP:';
     sectionSelector = '.vipFirstRow';
-    sectionClass = 'vipFirstRow'
+    sectionClass = 'vipFirstRow';
     mySectionAlreadyHasFirstRow = $('#reportingRight').has(sectionSelector).length > 0;
   }
 
@@ -152,7 +152,6 @@ function updateSeatList(thisSeatNumber, name, isGASection) {
     $row.addClass(sectionClass);
     $('#reportingRight table').append($row);
   }
-  debugger;
 }
 
 // ------------------------------------------------------[End addName]----------------->
