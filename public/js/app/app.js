@@ -1,6 +1,8 @@
 'use strict';
 
-
+$("#reportingLeft").hide();
+$("#reportingRight").hide();
+$("#name").hide();
 
 var gaPrice = 50;
 var vipPrice = 100;
@@ -22,8 +24,10 @@ function clickCreate() {
   var section = $("#options").val();
   if(section === "ga"){
     createGA();
+    $("#name").show();
   } else if(section === "vip"){
     createVIP();
+    $("#name").show();
   } else{
     alert("Please select a section.");
   }
@@ -115,6 +119,8 @@ function addName(){
     $this.text(name);
     //clear out the input box
     $('#name').val('');
+    $("#reportingLeft").show();
+    $("#reportingRight").show();
     updateSeatList(thisSeatNumber, name, isGASection);
   }else{
     alert('Already assigned.');

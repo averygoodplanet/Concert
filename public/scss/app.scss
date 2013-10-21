@@ -147,6 +147,9 @@ select, input {
   margin-left: 13px;
   float: left;
   background-color: rgba(1,1,1,.5);
+  -webkit-box-shadow: 0 0 5px black;
+  -moz-box-shadow: 0 0 5px black;
+  box-shadow: 0 0 5px black;
 
   h5 {
     color: white;
@@ -176,6 +179,9 @@ select, input {
   margin-top: -525px;
   margin-right: 13px;
   background-color: rgba(1,1,1,.5);
+  -webkit-box-shadow: 0 0 5px black;
+  -moz-box-shadow: 0 0 5px black;
+  box-shadow: 0 0 5px black;
 
   h5
   {

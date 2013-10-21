@@ -122,7 +122,10 @@ select, input {
   margin-top: -525px;
   margin-left: 13px;
   float: left;
-  background-color: rgba(1, 1, 1, 0.5); }
+  background-color: rgba(1, 1, 1, 0.5);
+  -webkit-box-shadow: 0 0 5px black;
+  -moz-box-shadow: 0 0 5px black;
+  box-shadow: 0 0 5px black; }
   #reportingLeftContainer h5 {
     color: white;
     text-align: center;
@@ -143,7 +146,10 @@ select, input {
   float: right;
   margin-top: -525px;
   margin-right: 13px;
-  background-color: rgba(1, 1, 1, 0.5); }
+  background-color: rgba(1, 1, 1, 0.5);
+  -webkit-box-shadow: 0 0 5px black;
+  -moz-box-shadow: 0 0 5px black;
+  box-shadow: 0 0 5px black; }
   #reportingRightContainer h5 {
     color: white;
     text-align: center;
