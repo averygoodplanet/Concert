@@ -5,8 +5,8 @@
       .small-4.columns
         %select#options{type: "text"}
           %option Select Section
-          %option{value: "ga"} General Admission
-          %option{value: "vip"} VIP
+          %option#gaOption{value: "ga"} General Admission
+          %option#vipOption{value: "vip"} VIP
       .small-4.columns
         %input#numSeats{type: "text", placeholder: "Number of Seats"}
       .small-4.columns

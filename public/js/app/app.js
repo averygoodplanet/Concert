@@ -1,7 +1,7 @@
 'use strict';
 
-$("#reportingLeft").hide();
-$("#reportingRight").hide();
+$("#reportingLeftContainer").hide();
+$("#reportingRightContainer").hide();
 $("#name").hide();
 
 var gaPrice = 50;
@@ -25,9 +25,11 @@ function clickCreate() {
   if(section === "ga"){
     createGA();
     $("#name").show();
+    $("#gaOption").remove();
   } else if(section === "vip"){
     createVIP();
     $("#name").show();
+    $("#vipOption").remove();
   } else{
     alert("Please select a section.");
   }
@@ -119,8 +121,8 @@ function addName(){
     $this.text(name);
     //clear out the input box
     $('#name').val('');
-    $("#reportingLeft").show();
-    $("#reportingRight").show();
+    $("#reportingLeftContainer").show();
+    $("#reportingRightContainer").show();
     updateSeatList(thisSeatNumber, name, isGASection);
   }else{
     alert('Already assigned.');
