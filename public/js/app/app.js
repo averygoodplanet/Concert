@@ -128,13 +128,13 @@ function updateSeatList(thisSeatNumber, name, isGASection) {
     section = 'GA:';
     sectionSelector = '.gaFirstRow';
     sectionClass = 'gaFirstRow';
-    mySectionAlreadyHasFirstRow = $('#reportingRight').has(sectionSelector).length > 0;
+    mySectionAlreadyHasFirstRow = $('#reportingRightBox').has(sectionSelector).length > 0;
   } else {
     sectionLetter = 'V';
     section = 'VIP:';
     sectionSelector = '.vipFirstRow';
     sectionClass = 'vipFirstRow';
-    mySectionAlreadyHasFirstRow = $('#reportingRight').has(sectionSelector).length > 0;
+    mySectionAlreadyHasFirstRow = $('#reportingRightBox').has(sectionSelector).length > 0;
   }
 
   var seat = sectionLetter + thisSeatNumber;
@@ -150,7 +150,7 @@ function updateSeatList(thisSeatNumber, name, isGASection) {
   } else {
     $row.children().eq(0).text(section);
     $row.addClass(sectionClass);
-    $('#reportingRight table').append($row);
+    $('#reportingRightBox table').append($row);
   }
 }
 
