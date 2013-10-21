@@ -158,4 +158,4 @@ test('Display seat prices in #reportingLeft', function () {
   deepEqual($('#totalGaDollars').text(), "100.00", 'Graph should show 100 total dollars in GA sales.');
   deepEqual($('#totalVipDollars').text(), "200.00", 'Graph should show 200 total dollars in VIP sales.');
   deepEqual($('#grandTotal').text(), "300.00", 'Graph should show 300 total dollars.');
-});
+});l

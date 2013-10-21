@@ -22,7 +22,8 @@ body {
 
 #optionsbox {
   padding-top: 5px;
-  margin: auto; }
+  margin: auto;
+  height: 31px; }
 
 select, input {
   height: 31px; }
