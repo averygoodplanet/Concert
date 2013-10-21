@@ -35,7 +35,7 @@ select, input {
 
 #overall2 {
   margin: auto;
-  margin-top: -15px;
+  margin-top: -5px;
   width: 960px;
   height: 675px;
   background-color: rgba(0, 0, 0, 0.5);
@@ -149,7 +149,8 @@ select, input {
   background-color: rgba(1, 1, 1, 0.5);
   -webkit-box-shadow: 0 0 5px black;
   -moz-box-shadow: 0 0 5px black;
-  box-shadow: 0 0 5px black; }
+  box-shadow: 0 0 5px black;
+  overflow: auto; }
   #reportingRightContainer h5 {
     color: white;
     text-align: center;
