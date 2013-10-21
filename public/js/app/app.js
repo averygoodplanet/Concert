@@ -125,7 +125,8 @@ function addName(){
     $("#reportingRightContainer").show();
     updateSeatList(thisSeatNumber, name, isGASection);
   }else{
-    alert('Already assigned.');
+    var $name = $this.text();
+    alert("Already assigned to: " + $name + ".");
   }
 }
 
