@@ -10,7 +10,7 @@
       .small-4.columns
         %input#numSeats{type: "text", placeholder: "Number of Seats"}
       .small-4.columns
-        %input#create.button.radius.small.success.expand{type: "button", value: "Create"}
+        %input#create.button.radius.small.alert.expand{type: "button", value: "Create"}
 #bottom
   #overall2
     #stage
@@ -24,6 +24,26 @@
       .small-10.columns
   #reportingLeftContainer
     #reportingLeft
+      %h5 Total Sold
+      #reportingLeftBox
+        %h6
+          VIP People:
+          %span#totalVipPeople 0
+        %h6
+          GA People:
+          %span#totalGaPeople 0
+        %h6
+          Total People:
+          %span#totalPeople 0
+        %h6
+          Total VIP: $
+          %span#totalVipDollars 0.00
+        %h6
+          Total GA: $
+          %span#totalGaDollars 0.00
+        %h6
+          Grand Total: $
+          %span#grandTotal 0.00
   #reportingRightContainer
     #reportingRight
       %h5 Reserved Seats

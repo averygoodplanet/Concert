@@ -1,5 +1,10 @@
 'use strict';
 
+
+
+var gaPrice = 50;
+var vipPrice = 100;
+
 $(document).ready(initialize);
 
 function initialize(fn, flag){
@@ -129,12 +134,42 @@ function updateSeatList(thisSeatNumber, name, isGASection) {
     sectionSelector = '.gaFirstRow';
     sectionClass = 'gaFirstRow';
     mySectionAlreadyHasFirstRow = $('#reportingRightBox').has(sectionSelector).length > 0;
+
+    var startingGaPeople = parseFloat($("#totalGaPeople").text());
+    var startingTotalPeople = parseFloat($("#totalPeople").text());
+    var startingPriceGa = parseFloat($("#totalGaDollars").text());
+    var startingGrandTotal = parseFloat($("#grandTotal").text());
+
+    var people = startingGaPeople + 1;
+    var totPeople = startingTotalPeople + 1;
+    var priceGa = startingPriceGa + gaPrice;
+    var ticketPrice = startingGrandTotal + gaPrice;
+
+    $("#totalGaPeople").text(people);
+    $("#totalPeople").text(totPeople);
+    $("#totalGaDollars").text(priceGa + ".00");
+    $("#grandTotal").text(ticketPrice + ".00");
   } else {
     sectionLetter = 'V';
     section = 'VIP:';
     sectionSelector = '.vipFirstRow';
     sectionClass = 'vipFirstRow';
     mySectionAlreadyHasFirstRow = $('#reportingRightBox').has(sectionSelector).length > 0;
+
+    var startingVipPeople = parseFloat($("#totalVipPeople").text());
+    var startingTotalPeople = parseFloat($("#totalPeople").text());
+    var startingPriceVip = parseFloat($("#totalVipDollars").text());
+    var startingGrandTotal = parseFloat($("#grandTotal").text());
+
+    var people = startingVipPeople + 1;
+    var totPeople = startingTotalPeople + 1;
+    var priceVip = startingPriceVip + vipPrice;
+    var ticketPrice = startingGrandTotal + vipPrice;
+
+    $("#totalVipPeople").text(people);
+    $("#totalPeople").text(totPeople);
+    $("#totalVipDollars").text(priceVip + ".00");
+    $("#grandTotal").text(ticketPrice + ".00");
   }
 
   var seat = sectionLetter + thisSeatNumber;

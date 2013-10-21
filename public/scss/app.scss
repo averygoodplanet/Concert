@@ -1,5 +1,5 @@
 html {
-  background: url(../img/bg3.jpg) no-repeat fixed;
+  background: url(../img/bg5.jpg) no-repeat fixed;
   background-size: 100%;
 }
 
@@ -145,6 +145,25 @@ select, input {
   margin-left: 13px;
   float: left;
   background-color: rgba(1,1,1,.5);
+
+  h5 {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    margin: 10px auto;
+    width: 180px;
+    border: 1px solid blue;
+  }
+
+  h6 {
+    color: white;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  span {
+    color: blue;
+  }
 }
 
 #reportingRightContainer {

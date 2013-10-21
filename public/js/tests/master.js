@@ -125,3 +125,37 @@ test('Display reserved seats in #reportingRight', function () {
   deepEqual($('#reportingRight table tr:nth-child(5) td:nth-child(2)').text(), 'V25', 'fourth row 2nd cell "V25"');
   deepEqual($('#reportingRight table tr:nth-child(5) td:nth-child(3)').text(), 'Dan', 'fourth row 3rd cell "Dan"');
 });
+
+test('Display seat prices in #reportingLeft', function () {
+  expect(6);
+
+  //create both sections
+  //--create #vip section with 40 seats
+  $('#options').val('ga');
+  $('#numSeats').val('40');
+  $('#create').trigger('click');
+
+  //--create #ga section with 60 seats
+  $('#options').val('vip');
+  $('#numSeats').val('60');
+  $('#create').trigger('click');
+
+  //reserve two seats in general admission
+  $('#name').val('Tobey');
+  $('#ga .seatRow:nth-child(1) .seat:nth-child(2) .seatinside').trigger('dblclick');
+  $('#name').val('James');
+  $('#ga .seatRow:nth-child(2) .seat:nth-child(3) .seatinside').trigger('dblclick');
+
+  //reserve two seats in vip
+  $('#name').val('Kirsten');
+  $('#vip .seat:nth-child(3) .seatinside').trigger('dblclick');
+  $('#name').val('Willem');
+  $('#vip .seat:nth-child(25) .seatinside').trigger('dblclick');
+
+  deepEqual($('#totalVipPeople').text(), "2", 'Graph should show 2 total people in VIP.');
+  deepEqual($('#totalGaPeople').text(), "2", 'Graph should show 2 total people in GA.');
+  deepEqual($('#totalPeople').text(), "4", 'Graph should show 4 total people.');
+  deepEqual($('#totalGaDollars').text(), "100.00", 'Graph should show 100 total dollars in GA sales.');
+  deepEqual($('#totalVipDollars').text(), "200.00", 'Graph should show 200 total dollars in VIP sales.');
+  deepEqual($('#grandTotal').text(), "300.00", 'Graph should show 300 total dollars.');
+});

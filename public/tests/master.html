@@ -30,7 +30,7 @@
             <input id='numSeats' placeholder='Number of Seats' type='text'>
           </div>
           <div class='small-4 columns'>
-            <input class='button radius small success expand' id='create' type='button' value='Create'>
+            <input class='button radius small alert expand' id='create' type='button' value='Create'>
           </div>
         </div>
       </div>
@@ -52,7 +52,35 @@
         </div>
       </div>
       <div id='reportingLeftContainer'>
-        <div id='reportingLeft'></div>
+        <div id='reportingLeft'>
+          <h5>Total Sold</h5>
+          <div id='reportingLeftBox'>
+            <h6>
+              VIP People:
+              <span id='totalVipPeople'>0</span>
+            </h6>
+            <h6>
+              GA People:
+              <span id='totalGaPeople'>0</span>
+            </h6>
+            <h6>
+              Total People:
+              <span id='totalPeople'>0</span>
+            </h6>
+            <h6>
+              Total VIP: $
+              <span id='totalVipDollars'>0.00</span>
+            </h6>
+            <h6>
+              Total GA: $
+              <span id='totalGaDollars'>0.00</span>
+            </h6>
+            <h6>
+              Grand Total: $
+              <span id='grandTotal'>0.00</span>
+            </h6>
+          </div>
+        </div>
       </div>
       <div id='reportingRightContainer'>
         <div id='reportingRight'>
